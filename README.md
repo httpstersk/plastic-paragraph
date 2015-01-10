@@ -1,33 +1,62 @@
-seed-element
-============
+# &lt;plastic-paragraph&gt;
 
-See the [component page](http://polymerlabs.github.io/seed-element) for more information.
+> A Polymer element to put any paragraph of text inside a shape you choose (Experimental)
 
-## Getting Started
+## Install
 
-We've put together a [guide to seed-element](http://www.polymer-project.org/docs/start/reusableelements.html) to help get you rolling.
-
-## Testing Your Element
-
-Add the logic specific to your new element and verify its functionality. Good unit tests are essential to your verification plan but a good way to quickly sanity test your component is to access your demo.html file via a local web server. There are several ways to do this but one easy method is to run a simple web server that ships with Python, using the commands:
+Install the component using [Bower](http://bower.io/):
 
 ```sh
-python -m SimpleHTTPServer
+$ bower install plastic-paragraph --save
 ```
 
-Or other method using NodeJS:
+Or [download as ZIP](https://github.com/hejty/plastic-paragraph/archive/master.zip).
 
-```sh
-http-server ./
+## Usage
+
+1. Import Web Components' polyfill:
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.5.2/webcomponents.min.js"></script>
 ```
 
-This starts a web server on port 8000, so you can test your new element by navigating a browser to `localhost:8000/test/index.html`.
+2. Import Custom Element:
 
-### web-component-tester
-
-The tests are also compatible with [web-component-tester](https://github.com/Polymer/web-component-tester). You can run them on multiple local browsers via:
-
-```sh
-npm install -g web-component-tester
-wct
+```html
+<link rel="import" href="plastic-paragraph/plastic-paragraph.html">
 ```
+
+3. Start using it!
+
+```html
+<p is="plastic-paragraph"></p>
+```
+
+## Options
+
+Attribute       | Options                                                       | Default                      | Description
+---             | ---                                                           | ---                          | ---
+`shape`         | `circle`                                                      | `circle`                     | The `shape` attribute sets a wrapping shape
+`size`          | *int*                                                         | `320`                        | The `size` attribute sets a size of an element
+
+## Example
+
+```html
+<p is="plastic-paragraph" shape="circle" size="600">Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself. Built atop these new standards, Polymer makes it easier and faster to create anything from a button to a complete application across desktop, mobile, and beyond.</p>
+```
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request ;)
+
+## History
+
+For detailed changelog, check [Releases](https://github.com/hejty/plastic-paragraph/releases).
+
+## License
+
+[MIT License](http://opensource.org/licenses/MIT)
