@@ -1,0 +1,26 @@
+{
+  "name": "plastic-paragraph",
+  "version": "0.0.1",
+  "authors": [
+    "Lubos Belak <belak.lubos@gmail.com>"
+  ],
+  "description": "A Polymer element to put any paragraph of text inside a shape you choose",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "paragraph",
+    "shapes"
+  ],
+  "main": "plastic-paragraph.html",
+  "license": "MIT",
+  "homepage": "https://github.com/hejty/plastic-paragraph/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "css-shapes-polyfill": "adobe-webplatform/css-shapes-polyfill"
+  }
+}
