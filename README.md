@@ -36,7 +36,7 @@ Or [download as ZIP](https://github.com/hejty/plastic-paragraph/archive/master.z
 
 Attribute       | Options                                                       | Default                      | Description
 ---             | ---                                                           | ---                          | ---
-`shape`         | `circle`                                                      | `circle`                     | The `shape` attribute sets a wrapping shape
+`shape`         | `circle`, `rhomb`                                             | `circle`                     | The `shape` attribute sets a wrapping shape
 `size`          | *int*                                                         | `320`                        | The `size` attribute sets a size of an element
 
 ## Example
