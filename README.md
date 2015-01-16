@@ -2,6 +2,8 @@
 
 > A Polymer element to put any paragraph of text inside a shape you choose (Experimental)
 
+![alt tag](http://hejty.github.io/hejty/plastic-paragraph/preview.png)
+
 ## Install
 
 Install the component using [Bower](http://bower.io/):
