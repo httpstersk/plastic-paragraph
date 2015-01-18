@@ -21,6 +21,8 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.5.2",
-    "css-shapes-polyfill": "adobe-webplatform/css-shapes-polyfill"
+    "css-shapes-polyfill": "adobe-webplatform/css-shapes-polyfill",
+    "paper-slider": "Polymer/paper-slider#~0.5.2",
+    "font-roboto": "Polymer/font-roboto#~0.5.2"
   }
 }
