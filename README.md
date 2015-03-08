@@ -2,7 +2,7 @@
 
 > A Polymer element to put any paragraph of text inside a shape you choose (Experimental)
 
-![alt tag](http://hejty.github.io/hejty/plastic-paragraph/preview.png)
+![alt tag](http://hejty.github.io/demos/plastic-paragraph/preview.png)
 
 ## Install
 
@@ -38,7 +38,7 @@ Or [download as ZIP](https://github.com/hejty/plastic-paragraph/archive/master.z
 
 Attribute       | Options                                                       | Default                      | Description
 ---             | ---                                                           | ---                          | ---
-`shape`         | `circle`, `rhomb`                                             | `circle`                     | The `shape` attribute sets a wrapping shape
+`shape`         | `circle`, `rhomb`, `diagonal`, `sandglass`                    | `circle`                     | The `shape` attribute sets a wrapping shape
 `size`          | *int*                                                         | `320`                        | The `size` attribute sets a size of an element
 
 ## Example
