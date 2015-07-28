@@ -5,7 +5,7 @@ A Polymer element to put any paragraph of text inside a shape you choose (Experi
 
 ##### Example
 
-    <p is="plastic-paragraph"></p>
+<p is="plastic-paragraph"></p>
 
 @element plastic-paragraph
 @blurb A Polymer element to put any paragraph of text inside a shape you choose
@@ -13,47 +13,101 @@ A Polymer element to put any paragraph of text inside a shape you choose (Experi
 @extends p
 @homepage https://github.com/hejty/plastic-paragraph
 -->
-<polymer-element name="plastic-paragraph" extends="p" attributes="shape size">
+
+<dom-module id="plastic-paragraph">
+
+  <style>
+    :host {
+      text-align: justify;
+    }
+
+    #container {
+      position: relative;
+    }
+
+    #left,
+    #right {
+      width: 50%;
+      height: 100%;
+    }
+
+    #left {
+      float: left;
+    }
+
+    #right {
+      float: right;
+    }
+  </style>
 
   <template>
 
-    <link rel="stylesheet" href="plastic-paragraph.css">
-
-    <div id="container" style="max-width: {{size}}px">
-        <img id="left" src="shapes/transparent-layer.png" style="-webkit-shape-outside: url(shapes/emulate-{{shape}}-left.png);">
-        <img id="right" src="shapes/transparent-layer.png" style="-webkit-shape-outside: url(shapes/emulate-{{shape}}-right.png);">
-        <content id="content"></content>
+    <div id="container" style$="{{setMaxWidth(size)}}">
+      <img id="left" src="shapes/transparent-layer.png" style$="{{setLeftSide(shape)}}">
+      <img id="right" src="shapes/transparent-layer.png" style$="{{setRightSide(shape)}}">
+      <content id="content"></content>
     </div>
 
   </template>
 
   <script>
+    (function() {
 
-    Polymer({
-      /**
-       * The `shape` attribute sets a wrapped shape
-       *
-       * @attribute shape
-       * @type string
-       * @default 'circle'
-       */
-      shape: 'circle',
+      Polymer({
 
-      /**
-       * The `size` attribute sets a size of an element
-       *
-       * @property size
-       * @type int
-       * @default 600
-       */
-      size: 600,
+        is: 'plastic-paragraph',
 
-      ready: function() {
+        extends: 'p',
 
-      }
+        properties: {
 
-    });
+          /**
+           * The `shape` attribute sets a wrapped shape
+           *
+           * @attribute shape
+           * @type string
+           * @default 'circle'
+           */
 
+          shape: {
+            type: String,
+            value: 'circle'
+          },
+
+          /**
+           * The `size` attribute sets a size of an element
+           *
+           * @property size
+           * @type int
+           * @default 600
+           */
+
+          size: {
+            type: Number,
+            value: 600
+          }
+
+        },
+
+  			setMaxWidth: function(size) {
+  				return 'max-width: ' + size + 'px;';
+  			},
+
+  			setLeftSide: function(shape) {
+  				return '-webkit-shape-outside: url(shapes/emulate-' + shape + '-left.png);';
+  			},
+
+  			setRightSide: function(shape) {
+          return '-webkit-shape-outside: url(shapes/emulate-' + shape + '-right.png);';
+  			},
+
+        ready: function() {
+
+        }
+
+      });
+
+    })();
   </script>
 
-</polymer-element>
+</dom-module>
