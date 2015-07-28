@@ -9,7 +9,7 @@ A Polymer element to put any paragraph of text inside a shape you choose (Experi
 
 @element plastic-paragraph
 @blurb A Polymer element to put any paragraph of text inside a shape you choose
-@status unstable
+@version 1.0.0
 @extends p
 @homepage https://github.com/hejty/plastic-paragraph
 -->
@@ -42,9 +42,9 @@ A Polymer element to put any paragraph of text inside a shape you choose (Experi
 
   <template>
 
-    <div id="container" style$="{{setMaxWidth(size)}}">
-      <img id="left" src="shapes/transparent-layer.png" style$="{{setLeftSide(shape)}}">
-      <img id="right" src="shapes/transparent-layer.png" style$="{{setRightSide(shape)}}">
+    <div id="container" style$="[[setMaxWidth(size)]]">
+      <img id="left" src="shapes/transparent-layer.png" style$="[[setLeftSide(shape)]]">
+      <img id="right" src="shapes/transparent-layer.png" style$="[[setRightSide(shape)]]">
       <content id="content"></content>
     </div>
 
@@ -89,17 +89,17 @@ A Polymer element to put any paragraph of text inside a shape you choose (Experi
 
         },
 
-  			setMaxWidth: function(size) {
-  				return 'max-width: ' + size + 'px;';
-  			},
+        setMaxWidth: function(size) {
+          return 'max-width: ' + size + 'px;';
+        },
 
-  			setLeftSide: function(shape) {
-  				return '-webkit-shape-outside: url(shapes/emulate-' + shape + '-left.png);';
-  			},
+        setLeftSide: function(shape) {
+          return 'shape-outside: url(shapes/emulate-' + shape + '-left.png); -webkit-shape-outside: url(shapes/emulate-' + shape + '-left.png);';
+        },
 
-  			setRightSide: function(shape) {
-          return '-webkit-shape-outside: url(shapes/emulate-' + shape + '-right.png);';
-  			},
+        setRightSide: function(shape) {
+          return 'shape-outside: url(shapes/emulate-' + shape + '-right.png); -webkit-shape-outside: url(shapes/emulate-' + shape + '-right.png);';
+        },
 
         ready: function() {
 
